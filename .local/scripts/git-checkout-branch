@@ -1,0 +1,10 @@
+#!/bin/sh
+
+remote_branches=/tmp/remote_branches
+local_branches=/tmp/local_branches
+
+git branch -r | sed -e 's/^\s*//g' -e 's/^origin\///g' | \
+	awk '{ if ($1 != "HEAD") print $1 }' 1>$remote_branches
+git branch | sed 's/^\s*\**\s*//g' 1>$local_branches
+
+git checkout $(cat "$remote_branches" "$local_branches" | sort | uniq | fzf --height 40%)

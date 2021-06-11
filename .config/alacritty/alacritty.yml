@@ -116,13 +116,13 @@ font:
   offset:
     y: 3
 
-  size: 9
+  size: 11
 
   normal:
-    family: JetBrainsMonoMedium Nerd Font
+    # family: JetBrainsMonoMedium Nerd Font
     # family: Caskaydia Cove Nerd Font
     # family: UbuntuMono Nerd Font
-    # family: Comic Shanns Regular
+    family: Comic Shanns Regular
     # family: Cascadia Code
     # family: Mononoki Nerd Font
     # family: Agave Nerd Font

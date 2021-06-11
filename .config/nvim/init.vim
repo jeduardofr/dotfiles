@@ -46,6 +46,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -103,3 +104,7 @@ let g:netrw_nogx = 1
 
 " Nerd tree
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" Preview Window
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)

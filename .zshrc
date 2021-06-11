@@ -11,6 +11,8 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="/home/eduardo/.oh-my-zsh"
 export EDITOR="nvim"
+export SPICETIFY_INSTALL="/home/eduardo/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -114,6 +116,7 @@ alias ..='cd ..'
 alias work='cd ~/Work'
 alias dev='cd ~/Dev'
 alias ga='git add'
+alias gap='git add -p'
 alias gb='git branch'
 alias gs='git status'
 alias gc='git commit'
@@ -129,12 +132,16 @@ alias sz='source ~/.zshrc'
 alias cat='bat'
 alias ctg='ctags --recurse=yes --exclude=.git --exclude=BUILD --exclude=.svn --exclude="vendor/*" --exclude="node_modules/*" --exclude="dist/*"'
 alias quote='fortune | cowsay | lolcat'
+alias of='nvim $(fzf --height 40%)'
+alias gcb='git-checkout-branch'
+alias clear=''
 
 # FZF to ignore the node_modules and vendor folders
 export FZF_DEFAULT_COMMAND='ag --hidden --nocolor --ignore vendor --ignore node_modules --ignore .git -g ""'
 
 export PATH=$PATH:~/.config/yarn/global/node_modules/.bin
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/scripts
 
 # Android Development
 export ANDROID_HOME=$HOME/Android/Sdk
