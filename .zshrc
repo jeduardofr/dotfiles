@@ -110,31 +110,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+[[ ! -f ~/.zsh_aliases ]] || source ~/.zsh_aliases
 
-alias l='exa -la'
-alias ..='cd ..'
-alias work='cd ~/Work'
-alias dev='cd ~/Dev'
-alias ga='git add'
-alias gap='git add -p'
-alias gb='git branch'
-alias gs='git status'
-alias gc='git commit'
-alias gl='git log'
-alias gsh='git show'
-alias gr='git rebase'
-alias gf='git fetch'
-alias v='nvim'
-alias vc='nvim ~/.config/nvim/init.vim'
-alias ac='nvim ~/.config/alacritty/alacritty.yml'
-alias zc='nvim ~/.zshrc'
-alias sz='source ~/.zshrc'
-alias cat='bat'
-alias ctg='ctags --recurse=yes --exclude=.git --exclude=BUILD --exclude=.svn --exclude="vendor/*" --exclude="node_modules/*" --exclude="dist/*"'
-alias quote='fortune | cowsay | lolcat'
-alias of='nvim $(fzf --height 40%)'
-alias gcb='git-checkout-branch'
-alias clear=''
 
 # FZF to ignore the node_modules and vendor folders
 export FZF_DEFAULT_COMMAND='ag --hidden --nocolor --ignore vendor --ignore node_modules --ignore .git -g ""'
