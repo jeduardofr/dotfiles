@@ -63,6 +63,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'fxn/vim-monochrome'
 Plug 'morhetz/gruvbox'
 Plug 'folke/tokyonight.nvim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Nerd Tree
 Plug 'preservim/nerdtree'
@@ -89,9 +90,12 @@ nnoremap <A-h> <C-W>h
 " Theme
 set termguicolors
 
-colorscheme gruvbox
+" colorscheme gruvbox
+" let g:lightline = { 'colorscheme': 'gruvbox' }
 
-let g:lightline = { 'colorscheme': 'gruvbox' }
+set background=dark
+colorscheme palenight
+let g:lightline = { 'colorscheme': 'palenight' }
 
 " Display double quotes in json file
 let g:indentLine_setConceal = 0
@@ -100,10 +104,19 @@ let g:indentLine_setConceal = 0
 " map <unique> <F1> <ESC>:make<CR>
 " set makeprg=make\ -w
 
+" Vertical Ruler for length of lines
+set cc=80 " Highlight column at 80
+set ru
+
 let g:netrw_nogx = 1
 
 " Nerd tree
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" Map leader to space bar
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+nmap <unique> <Leader>s vip:sort u<CR>
 
 " Preview Window
 command! -bang -nargs=? -complete=dir Files
