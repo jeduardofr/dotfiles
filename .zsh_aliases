@@ -21,6 +21,7 @@ alias ctg='ctags --recurse=yes --exclude=.git --exclude=BUILD --exclude=.svn --e
 alias quote='fortune | cowsay | lolcat'
 alias of='nvim $(fzf --height 40%)'
 alias gcb='git-checkout-branch'
-alias clear=''
 alias za='nvim ~/.zsh_aliases'
+alias clear=''
 alias gbl='git blame $(fzf --height 40%)'
+alias prettyjson='python3 -m json.tool | pygmentize -l javascript'
