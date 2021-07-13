@@ -50,6 +50,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'jwalton512/vim-blade'
 Plug 'Yggdroot/indentLine'
 Plug 'leafgarland/typescript-vim'
@@ -120,6 +121,7 @@ let g:netrw_nogx = 1
 
 " Nerd tree
 nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
 
 " Map leader to space bar
 nnoremap <SPACE> <Nop>
@@ -141,7 +143,6 @@ command! -bang -nargs=? -complete=dir Files
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
 " Custom onedark theme
-" https://github.com/peitalin/dotfiles/blob/53aa7bb022d3c50cf1e9dcba67e7a7a3199b0fe9/.vimrc#L520-L685
 colorscheme onedark
 
 " Normal         xxx ctermfg=145 ctermbg=235 guifg=#ABB2BF guibg=#282C34
