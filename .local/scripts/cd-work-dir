@@ -1,0 +1,5 @@
+#!/bin/sh
+
+directory=$(ls -l ~/Work | awk '{ if ($1 != "total") print $9 }' | fzf --height 20%)
+
+cd "/home/claytro/Work/${directory}"

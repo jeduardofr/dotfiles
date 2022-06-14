@@ -1,0 +1,12 @@
+#!/bin/sh
+
+connection=$(cat /home/claytro/.ssh/config | \
+	awk '{ if ($1 == "Host") print $2 }' | \
+	fzf --height 40%)
+
+if [ -n $connection ]; then
+	ssh "${connection}"
+else
+	echo "nope"
+fi
+

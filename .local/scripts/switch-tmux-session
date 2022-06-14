@@ -1,0 +1,11 @@
+#!/bin/sh
+
+session_name=$(tmux list-sessions | awk '{ print $1 }' | sed s/://g | fzf --height 40%)
+
+if [ $? -gt 0 ]; then
+	printf "No session was selected\n"
+	exit 1
+fi
+
+tmux switch -t $session_name
+

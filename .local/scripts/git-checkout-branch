@@ -8,3 +8,4 @@ git branch -r | sed -e 's/^\s*//g' -e 's/^origin\///g' | \
 git branch | sed 's/^\s*\**\s*//g' 1>$local_branches
 
 git checkout $(cat "$remote_branches" "$local_branches" | sort | uniq | fzf --height 40%)
+
